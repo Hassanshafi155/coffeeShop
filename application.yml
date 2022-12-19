@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/postgres'
+    username: postgres
+    password: admin
+
+  jpa:
+    properties:
+      hibernate:
+        jdbc: 
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: none
+
+expected-time-per-order: 5
