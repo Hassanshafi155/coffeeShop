@@ -27,7 +27,7 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 
-	@GetMapping("getOrder/{orderId}")
+	@GetMapping("orders/{orderId}")
 	public ResponseEntity<Object> getOrder(@PathVariable String orderId) {
 		try {
 			OrderResponse response = orderService.getOrder(orderId);
@@ -39,7 +39,7 @@ public class OrderController {
 
 	}
 
-	@PostMapping("addOrder")
+	@PostMapping("orders")
 	public ResponseEntity<Object> addOrder(@RequestBody AddOrderRequest request) {
 		try {
 			logger.info("ORDER received");
@@ -52,7 +52,7 @@ public class OrderController {
 
 	}
 
-	@DeleteMapping("deleteOrder/{orderId}")
+	@DeleteMapping("orders/{orderId}")
 	public ResponseEntity<Object> deleteOrder(@PathVariable String orderId) {
 		try {
 			OrderResponse response = orderService.deleteOrder(orderId);
